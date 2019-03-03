@@ -4,7 +4,6 @@ export default class ToWords {
     }
     get GetWords() {
       const vienetaiNames = ["","vienas","du","trys","keturi","penki","šeši","septyni","aštuoni","devyni","dešimt","venuolika","dvylika","trylika","keturiolika","penkiolika","šešiolika","septyniolika","aštuoniolika","devyniolika"];
-      //const iolika = ["dešimt","venuolika","dvylika","trylika","keturiolika","penkiolika","šešiolika","septyniolika","aštuoniolika","devyniolika"];
       const desimtysNames = ["","","dvidešimt","trisdešimt","keturiasdešimt","penkiasdešimt","šešiasdešimt","septyniasdešimt","aštuoniasdešimt","devyniasdešimt"];
       const simtaiNames = {vnt:"šimtas",ko:"šimtų",dgs:"šimtai"};
       const tukstNames = {vnt:"tūkstantis",ko:"tūkstančių",dgs:"tūkstančiai"};
@@ -12,13 +11,11 @@ export default class ToWords {
       
       let sum = this.sum;
       let kablelioVieta = sum.toString().indexOf('.');
-      //let visoSkaiciu = sum.toString().length;
       let sumArr = sum.toString().split('');
       let sveiki = sum.toFixed(0);
       let visoSveiku = sveiki.toString().length;
       let poKablelio = sum.toString().substring(kablelioVieta + 1);
       let sveikiArr = sumArr.slice(0, kablelioVieta);
-      //let poKablelioArr = sumArr.slice(kablelioVieta + 1, visoSkaiciu)
   
       function getValiuta(skArr){
           let sk = skArr.slice(visoSveiku - 2).length === 1 ? Number(skArr[skArr.length - 1]) : Number(String(skArr[skArr.length - 2]) + String(skArr[skArr.length - 1]));
